@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐷</text></svg>"
+      <!--
+      --
+    />
+    />
+    <title>Pig game</title>
+  </head>
+  <body>
+    <div class="instructions hidden">
+      <button class="btn-close">&times;</button>
+      <h2 class="instructions-heading">🐷 game instructions</h2>
+      <ul class="instructions-list">
+        <li class="list-item">
+          <span>✓</span>
+          <p>
+            If the player rolls a 1, they score nothing and it becomes the next
+            player's turn.
+          </p>
+        </li>
+        <li class="list-item">
+          <span>✓</span>
+          <p>
+            If the player rolls any other number, it is added to their turn
+            total and the player's turn continues.
+          </p>
+        </li>
+        <li class="list-item">
+          <span>✓</span>
+          <p>
+            If a player chooses to "hold", their turn total is added to their
+            score, and it becomes the next player's turn.
+          </p>
+        </li>
+        <li class="list-item">
+          <span>✓</span>
+          <p>The first player to score 100 or more points wins.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="players">
+      <div class="player player--0 player--active">
+        <h1 class="player-heading">player 1</h1>
+        <p class="score score--0">0</p>
+        <div class="current">
+          <p class="current-label">current</p>
+          <p class="current-score current-score--0">0</p>
+        </div>
+      </div>
+      <div class="player player--1">
+        <h1 class="player-heading">player 2</h1>
+        <p class="score score--1">0</p>
+        <div class="current">
+          <p class="current-label">current</p>
+          <p class="current-score current-score--1">0</p>
+        </div>
+      </div>
+      <img class="dice hidden" src="img/Dice-1.png" alt="Dice number one" />
+      <button class="btn btn--rules">⚙️&nbsp;&nbsp;rules</button>
+      <button class="btn btn--new">🔄&nbsp;&nbsp;new game</button>
+      <button class="btn btn--roll">🎲&nbsp;&nbsp;roll dice</button>
+      <button class="btn btn--hold">📥&nbsp;&nbsp;hold</button>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

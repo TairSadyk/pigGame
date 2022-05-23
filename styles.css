@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.6rem;
+  color: #1c3332;
+  background: linear-gradient(to right top, #7ebbb9, #5eaaa8, #4b8886);
+  height: 100vh;
+  position: relative;
+}
+.instructions {
+  /* background-color: rgba(126, 187, 185, 0.623); */
+  background-color: rgba(248, 241, 241, 0.8);
+  padding: 7.2rem 4.8rem;
+  max-width: 50rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1.2rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: all 1s ease;
+}
+.btn-close {
+  cursor: pointer;
+  color: #264443;
+  font-size: 4.8rem;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 1rem;
+  right: 2.4rem;
+}
+.instructions-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.instructions-list {
+  color: #264443;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.list-item {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+}
+.list-item span {
+  color: rgba(235, 93, 11, 0.7);
+  font-size: 3.2rem;
+}
+
+.players {
+  /* max-width: 100rem;
+  margin: 12.6rem auto; */
+  /* padding: 15rem 0; */
+  display: flex;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 3.2rem rgba(0, 0, 0, 0.2);
+}
+
+.player {
+  padding: 9rem 14rem;
+  width: 50rem;
+  background-color: rgba(248, 241, 241, 0.25);
+  text-align: center;
+}
+.player--0 {
+  border-radius: 1.2rem 0 0 1.2rem;
+}
+.player--1 {
+  border-radius: 0 1.2rem 1.2rem 0;
+}
+.player-heading {
+  font-size: 3.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.score {
+  color: rgba(235, 93, 11, 0.6);
+  font-size: 9.6rem;
+  font-weight: 400;
+  margin-bottom: 9.6rem;
+}
+
+.current {
+  padding: 3.2rem;
+  color: rgba(248, 241, 241, 0.7);
+  background-color: rgba(75, 136, 134, 0.7);
+  gap: 2.4rem;
+  border-radius: 0.8rem;
+}
+.current-label {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.8rem;
+}
+.current-score {
+  font-size: 3.2rem;
+  font-weight: 400;
+}
+
+.dice {
+  position: absolute;
+  width: 11rem;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.2);
+}
+.btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  color: #264443;
+  background-color: rgba(248, 241, 241, 0.6);
+  border: none;
+  padding: 1.6rem 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3.2rem;
+  box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.btn:active {
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, 0.4rem);
+}
+.btn--rules {
+  padding: 0.6rem 1.2rem;
+  top: 5%;
+}
+.btn--new {
+  top: 15%;
+}
+.btn--roll {
+  bottom: 20%;
+}
+.btn--hold {
+  bottom: 5%;
+}
+.player--active {
+  background-color: rgba(248, 241, 241, 0.5);
+  transition: all 0.4s ease-in-out;
+}
+.hidden {
+  display: none;
+  transition: all 0.4s ease-in-out;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 5;
+  transition: all 0.4s ease-in-out;
+}
+
+.player--active .current {
+  box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.1);
+}
+.player--active .score {
+  text-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+.player--active .player-heading {
+  font-weight: 600;
+  text-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+.winner {
+  background-color: #1c3332;
+  position: relative;
+}
+
+.winner .player-heading {
+  color: #dfeeee;
+}
+.winner::after {
+  content: "you won 🥳";
+  color: rgba(235, 93, 11, 0.8);
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  top: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s ease-in-out;
+}
+.winner .score {
+  color: rgba(235, 93, 11, 0.4);
+}
+
+.winner .current {
+  background-color: rgba(75, 136, 134, 0.4);
+  color: rgba(248, 241, 241, 0.4);
+}
